@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background: url(/images/bg1.jpg) no-repeat center fixed;
+        background-size: cover;
+        opacity: 0.9;
+      }
+    </style>
+    <title>Game</title>
+  </head>
+  <body>
+    <section id="firstPage">
+      <img id="title" src="/images/name (2).png" />
+      <h1 id="load">Loading...</h1>
+      <div id="loadingBg">
+        <div id="loading"></div>
+      </div>
+    </section>
+    <script>
+      let load = document.getElementById("loadingBg");
+      let loading = document.getElementById("loading");
+
+      let start = 10;
+
+      let loadBar = setInterval(animate, 300);
+      function animate() {
+        if (start >= 671) clearInterval(loadBar, 500);
+        start = start + 10;
+        loading.style.width = start + "px";
+      }
+      animate();
+
+      let page = document.getElementById("second-page");
+      let first = document.getElementById("firstPage");
+      function display() {
+        page.style.visibility = "visible";
+        page.style.transition = "all 1s linear";
+        // first.style.visibility = "hidden";
+      }
+      setTimeout(display, 2000);
+    </script>
+  </body>
+</html>

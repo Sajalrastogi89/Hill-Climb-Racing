@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+body {
+  width: 200vw;
+}
+
+#title {
+  width: 25vw;
+  height: 27vh;
+  transform: rotate(-4deg);
+  position: absolute;
+  top: 22vh;
+  left: 37vw;
+}
+#load {
+  font-size: 35px;
+  font-family: sans-serif;
+  color: white;
+  position: absolute;
+  top: 51vh;
+  left: 43vw;
+}
+#loadingBg {
+  background-color: rgb(26, 24, 24);
+  position: absolute;
+  top: 60vh;
+  left: 25vw;
+  width: 50vw;
+  height: 8vh;
+  border: 5px solid black;
+}
+#loading {
+  position: absolute;
+  background-color: whitesmoke;
+  width: 30vw;
+  height: 8vh;
+}
+
+#car {
+  position: absolute;
+  top: 61vh;
+}
+/*PETROL*/
+
+#petrol {
+  position: fixed;
+  top: 3vh;
+  left: 1vw;
+
+  width: 15vw;
+  height: 5vh;
+  border: 2px solid black;
+}
+#petrol-line {
+  position: absolute;
+  background-color: rgb(21, 139, 41);
+  width: 12vw;
+  height: 4.5vh;
+}
