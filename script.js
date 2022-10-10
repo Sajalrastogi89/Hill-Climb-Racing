@@ -5,21 +5,10 @@ canvas.width = 5000;
 let c = canvas.getContext("2d");
 
 /*TRACK*/
-let coin=new Image();
+
 c.fillStyle = "#6495ED";
-let coinDistance=400;
-function coins(){
-  // for(let j=0;j<5;j++){
-    coin.src="images/coin.png";
-   for(let k=0;k<20;k++)
-    c.drawImage(coin,coinDistance+400*k,canvas.height-130,80,60);
-  //  coinDistance=coinDistance+50;
-   
-   
-    // coinDistance+=200;
-    console.log(62536);
-  // }
-}
+
+
 
 
 const trigno = (a, b, c) => {
@@ -61,16 +50,33 @@ window.addEventListener("keydown", (event) => {
     cX += 5;
   }
 });
+
+let coinY=100;
+let coin=new Image;
+coin.src="images/coin.png";
+function coins(distance,n){
+  var coinDistance=distance;
+  for(var j=0;j<n;j++){
+    c.drawImage(coin,coinDistance,canvas.height-img.height-40,70,50);
+    coinDistance+=50;
+  }
+  }
+
+
+
 let position = 0;
 function animate() {
   c.fillRect(0, 0, canvas.width, canvas.height);
   carMove();
+  coins(500,3);
+  coins(2000,4);
+  coins(4000,5);
   img.src = "images/trackNew.jpeg";
-  // position += 1;
+  position += 1;
   for (let i = 0; i < canvas.width; i++)
     c.drawImage(img, i, canvas.height - land(i) - 40);
 
-    coins();
+   
   
   requestAnimationFrame(animate);
 }
