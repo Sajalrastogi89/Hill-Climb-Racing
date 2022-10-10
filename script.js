@@ -52,7 +52,7 @@ window.addEventListener("keydown", (event) => {
 });
 
 let coinY=100;
-let coin=new Image;
+let coin=new Image();
 coin.src="images/coin.png";
 function coins(distance,n){
   var coinDistance=distance;
@@ -61,6 +61,20 @@ function coins(distance,n){
     coinDistance+=50;
   }
   }
+
+let petrolDistance=400;
+function petrol1(){
+  let petrol2=new Image();
+  petrol2.src="images/petrolTanker.png";
+  for(var k=0;k<4;k++){
+    c.drawImage(petrol2,petrolDistance+1200*k,canvas.height-img.height-40,70,50);
+  }
+}
+
+
+
+
+
 
 
 
@@ -71,6 +85,7 @@ function animate() {
   coins(500,3);
   coins(2000,4);
   coins(4000,5);
+  petrol1();
   img.src = "images/trackNew.jpeg";
   position += 1;
   for (let i = 0; i < canvas.width; i++)
