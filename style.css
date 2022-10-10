@@ -4,9 +4,6 @@
   box-sizing: border-box;
   overflow-y: hidden;
 }
-body {
-  width: 200vw;
-}
 
 #title {
   width: 25vw;
@@ -32,6 +29,7 @@ body {
   width: 50vw;
   height: 8vh;
   border: 5px solid black;
+  overflow: hidden;
 }
 #loading {
   position: absolute;
@@ -39,10 +37,10 @@ body {
   width: 30vw;
   height: 8vh;
 }
-
+/*
 #car {
   position: absolute;
-  top: 61vh;
+ top:-20vh;
 }
 /*PETROL*/
 
@@ -50,10 +48,10 @@ body {
   position: fixed;
   top: 3vh;
   left: 1vw;
-
   width: 15vw;
   height: 5vh;
   border: 2px solid black;
+  overflow: hidden;
 }
 #petrol-line {
   position: absolute;
