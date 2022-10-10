@@ -1,6 +1,6 @@
 let canvas = document.getElementById("canvas");
 canvas.height = window.innerHeight;
-canvas.width = window.innerWidth;
+canvas.width = 5000;
 
 let c = canvas.getContext("2d");
 
@@ -14,7 +14,7 @@ const trigno = (a, b, c) => {
 let layers = [];
 
 function land(x) {
-  x = x / 200;
+  x = x / 150;
   layers.push(Math.random() * 50);
   return trigno(layers[Math.floor(x)], layers[Math.ceil(x)], x - Math.floor(x));
 }
@@ -22,54 +22,38 @@ function land(x) {
 /*CAR*/
 let img = new Image();
 
-let carMove = new (function () {
-  this.car = new Image();
-  this.car.src = "images/car.png";
-  this.x = canvas.width / 2 - 100;
-  this.y = 0;
-  this.ys = 0;
-  this.cdraw = function () {
-    let d = canvas.height - land(this.x + position);
-    if (d - 85 > this.y) this.ys += 0.1;
-    else {
-      this.y = d - 85;
-      //
-       this.ys = d - this.y - 90;
-      this.ys -= 0.1;
-    }
-    this.y += this.ys;
-    c.save();
-    c.translate(this.x, this.y);
-    c.drawImage(this.car, 10, 0, 150, 150);
-    c.restore();
-  };
-})();
-/*
-let update = function () {
-  window.addEventListener("keypress", (k) => {
-    switch (k.key) {
-      case "ArrowRight":
-        return 10;
-        break;
-    }
-  });
-*/
+let car = new Image();
+car.src = "images/car.png";
+let cX = 100;
+let cY = canvas.height - 200 - img.height;
+let carMove = () => {
+  c.drawImage(car, cX, cY, 150, 150);
+};
+
+window.addEventListener("keydown", (event) => {
+  if (event.key == "ArrowRight") {
+    cX += 10;
+  }
+  if (event.key == "ArrowLeft") {
+    cX -= 10;
+  }
+  if (event.key == "ArrowUp") {
+    cX += 10;
+    cY -= 2;
+  }
+  if (event.key == "ArrowDown") {
+    cY += 2;
+    cX += 5;
+  }
+});
 let position = 0;
 function animate() {
   c.fillRect(0, 0, canvas.width, canvas.height);
-  carMove.cdraw();
-  /*
-  let x = 100;
-  for (let j = 0; j < 3; j++) {
-    let coin = new Image();
-    coin.src = "images/coin.png";
-    c.drawImage(coin, x, canvas.height - img.height, 100, 80);
-    x += 80;
-  }*/
+  carMove();
   img.src = "images/trackNew.jpeg";
-  position++;
+  // position += 1;
   for (let i = 0; i < canvas.width; i++)
-    c.drawImage(img, i, canvas.height - land(i + position));
+    c.drawImage(img, i, canvas.height - land(i) - 40);
   requestAnimationFrame(animate);
 }
 
@@ -80,7 +64,7 @@ animate();
 let petrol = document.getElementById("petrol");
 let pLine = document.getElementById("petrol-line");
 
-let start = 210;
+let start = 230;
 
 let PBar = setInterval(petrolWork, 500);
 function petrolWork() {
@@ -98,37 +82,16 @@ function petrolWork() {
 }
 petrolWork();
 
-/*CAR*/
-
-// let car = document.getElementById("car");
-// function carDown () {
-//   let carSpeed=5;
-//   let carP =+ carSpeed;
-//   // if(carP)
-//   car.style.top=carP +'px';
-// }
-// carDown();
-//let x = window.innerHeight;
+/*COINS
+let coin = new Image();
+coin.src = "images/coin.png";
+c.drawImage(coin, 100, 100);
 /*
-function carMove() {
-  let carStart = 0;
-  let x = 10;
-  const CarMoving = setInterval(carAnimate, 100);
-  function carAnimate() {
-    carStart += x;
-    if (carStart > 900) carStart = 0;
-    car.style.left = carStart + "px";
-    if (carStart > 200 && carStart < 300) {
-      car.style.left = carStart + "px";
-      car.style.bottom = carStart - 200 + "px";
-    }
-    if (carStart > 300 && carStart < 400) {
-      car.style.left = carStart + "px";
-      car.style.top = carStart + "px";
-    }
-
-    //if (carStart > 200 && carStart < 400) car.style.top = 0 + "px";
-  }
+let coinDistance = 500;
+for (let j = 0; j < 5; j++) {
+  let coin = new Image();
+  coin.src = "images/coin.png";
+  c.drawImage(coin, coinDistance, canvas.height - land(j - 15), 100, 100);
+  coinDistance += 70;
 }
-carMove();
 */

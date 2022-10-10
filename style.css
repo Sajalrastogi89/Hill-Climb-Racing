@@ -37,25 +37,25 @@
   width: 30vw;
   height: 8vh;
 }
-/*
-#car {
-  position: absolute;
- top:-20vh;
-}
+
+/* #car { */
+/* position: absolute; */
+/* bottom: 0.5vh; */
+/* } */
 /*PETROL*/
 
 #petrol {
   position: fixed;
   top: 3vh;
   left: 1vw;
-  width: 15vw;
-  height: 5vh;
+  width: 17vw;
+  height: 7vh;
   border: 2px solid black;
   overflow: hidden;
 }
 #petrol-line {
   position: absolute;
   background-color: rgb(21, 139, 41);
-  width: 12vw;
-  height: 4.5vh;
+  width: 15vw;
+  height: 7vh;
 }
