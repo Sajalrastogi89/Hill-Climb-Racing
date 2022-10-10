@@ -5,8 +5,22 @@ canvas.width = 5000;
 let c = canvas.getContext("2d");
 
 /*TRACK*/
-
+let coin=new Image();
 c.fillStyle = "#6495ED";
+let coinDistance=400;
+function coins(){
+  // for(let j=0;j<5;j++){
+    coin.src="images/coin.png";
+   for(let k=0;k<20;k++)
+    c.drawImage(coin,coinDistance+400*k,canvas.height-130,80,60);
+  //  coinDistance=coinDistance+50;
+   
+   
+    // coinDistance+=200;
+    console.log(62536);
+  // }
+}
+
 
 const trigno = (a, b, c) => {
   return a + b + (a - b) * Math.cos(Math.PI * c);
@@ -32,7 +46,8 @@ let carMove = () => {
 
 window.addEventListener("keydown", (event) => {
   if (event.key == "ArrowRight") {
-    cX += 10;
+   cX += 10;
+   ;
   }
   if (event.key == "ArrowLeft") {
     cX -= 10;
@@ -54,6 +69,9 @@ function animate() {
   // position += 1;
   for (let i = 0; i < canvas.width; i++)
     c.drawImage(img, i, canvas.height - land(i) - 40);
+
+    coins();
+  
   requestAnimationFrame(animate);
 }
 
