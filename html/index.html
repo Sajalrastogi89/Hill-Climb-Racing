@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="25; url=/index.html" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <style>
       body {
         background: url(/images/bg1.jpg) no-repeat center fixed;
@@ -18,7 +17,7 @@
   <body>
     <section id="firstPage">
       <img id="title" src="/images/name (2).png" />
-      <h1 id="load">Loading.....</h1>
+      <h1 id="load">Loading...</h1>
       <div id="loadingBg">
         <div id="loading"></div>
       </div>
@@ -30,21 +29,16 @@
       let start = 10;
 
       let loadBar = setInterval(animate, 300);
+      function newPage() {
+        window.open("game.html");
+      }
       function animate() {
         if (start >= 671) clearInterval(loadBar, 500);
         start = start + 10;
         loading.style.width = start + "px";
+        if (start == 670) newPage();
       }
       animate();
-
-      let page = document.getElementById("second-page");
-      let first = document.getElementById("firstPage");
-      function display() {
-        page.style.visibility = "visible";
-        page.style.transition = "all 1s linear";
-        // first.style.visibility = "hidden";
-      }
-      setTimeout(display, 2000);
     </script>
   </body>
 </html>
