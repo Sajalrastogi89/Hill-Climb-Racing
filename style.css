@@ -42,12 +42,32 @@
 /* position: absolute; */
 /* bottom: 0.5vh; */
 /* } */
+
+
+#click-me {
+  position: absolute;
+  top: 40vh;
+  left: 45vw;
+  width: 10vw;
+  padding: 1%;
+  font-size: 36px;
+  font-family: sans-serif;
+  border: 2px solid white;
+  background: rgb(19, 18, 18, 0.3);
+  border-radius: 20%;
+  color: white;
+}
+#click-me:hover {
+  transform: scale(1.2);
+}
+
+
 /*PETROL*/
 
 #petrol {
   position: fixed;
   top: 3vh;
-  left: 1vw;
+  left: 7vw;
   width: 17vw;
   height: 7vh;
   border: 2px solid black;
@@ -58,13 +78,56 @@
   background-color: rgb(21, 139, 41);
   width: 15vw;
   height: 7vh;
+  visibility: hidden;
 }
-table{
+#line {
+  border: 1px solid black;
+  padding: 2px;
+  background-color: gray;
+  width: 35%;
   position: absolute;
-  top: 13vh;
-left: 5vw;
+  top: 4vh;
+  left: 35vw;
+  border-radius: 10px;
+  visibility: hidden;
+}
+#distance {
+  font-size: 30px;
+  position: absolute;
+  top: 7vh;
+  left: 35vw;
+  color: white;
+  visibility: hidden;
+}
+
+#coin{
+  position: absolute;
+  top: 15vh;
+left: 2vw;
 
  
+}
+img{
+  height: 5vh;
+  width: 5vw;
+}
+#fuel{
+ position: absolute;
+ top: 5vh;
+ left:1vw;
+
+}
+#score1{
+  position: fixed;
+  top: 12vh;
+  left: 12vw;
+  width: 17vw;
+  height: 10vh;
+ 
+  overflow: hidden;
+  
   text-align: center;
  font-size: 30px;
 }
+
+

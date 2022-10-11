@@ -8,8 +8,8 @@ let c = canvas.getContext("2d");
 
 c.fillStyle = "#6495ED";
 
-
-
+let pLine = document.getElementById("petrol-line");
+let start = 250;
 
 const trigno = (a, b, c) => {
   return a + b + (a - b) * Math.cos(Math.PI * c);
@@ -31,15 +31,26 @@ let img = new Image();
 let car = new Image();
 car.src = "images/car.png";
 let cX = 100;
-let cY = canvas.height - 200 - img.height;
+let cY = -100;
 let carMove = () => {
-  c.drawImage(car, cX, cY, 150, 150);
+  c.drawImage(car, cX, cY, 130, 150);
 };
+let d = document.getElementById("distance");
+function dCaclulate() {
+  let count = 0;
+  var p = 500;
+  count += cX;
+  distance.innerHTML = count;
+  // setInterval(() => {
+  //   distance.style.left = p + "px";
+  //   p+=1;
+  // }, 50);
+}
 let i5=0;
 window.addEventListener("keydown", (event) => {
   if (event.key == "ArrowRight") {
    cX += 10;
-cY+=Math.sin(cX)*10+land(i5++)+500;
+// cY+=Math.sin(cX)*10+land(i5++)+500;
    
     // coinsArr.splice(0, 1);
    
@@ -71,11 +82,18 @@ function coins(distance,n){
   }
   let petrolArr=[400,1900,3400];
 let count4=0;
+let j=0;
 function petrol1(){
 
   if(cX + 100>=petrolArr[0]){
     petrolArr.splice(0,1);
     console.log(++count4);
+//     if(count4>j){
+// j++;
+
+//     }
+pLine.style.backgroundColor="rgb(21, 139, 41)";
+start=250;
   }
   let petrol2=new Image();
   petrol2.src="images/petrolTanker.png";
@@ -103,7 +121,7 @@ function animate() {
       coinsArr[i].num--;
       // console.log(coinsArr[i].num);
       if(coinsArr[i].num>=0){
-        count2=count2+1;
+        count2=count2+50;
         console.log(count2);
         document.getElementById("score").innerHTML=count2;
       }
@@ -118,6 +136,7 @@ function animate() {
   // coins(2000,4);
   // coins(4000,5);
   petrol1();
+  dCaclulate();
   img.src = "images/trackNew.jpeg";
   position += 1;
   for (let i = 0; i < canvas.width; i++)
@@ -133,13 +152,13 @@ animate();
 /*PETROL*/
 
 let petrol = document.getElementById("petrol");
-let pLine = document.getElementById("petrol-line");
 
-let start = 230;
 
-let PBar = setInterval(petrolWork, 500);
+
+
+let PBar = setInterval(petrolWork, 50);
 function petrolWork() {
-  if (start < 0) clearInterval(PBar, 500);
+  // if (start < 0) clearInterval(PBar, 500);
   if (start < 150 && start > 80) {
     pLine.style.backgroundColor = "#FFFF00";
     pLine.style.transition = "0.1s linear";
@@ -148,8 +167,9 @@ function petrolWork() {
     pLine.style.backgroundColor = "#FF0000";
     pLine.style.transition = "0.2s ease";
   }
-  start = start - 2;
+  start = start - 5;
   pLine.style.width = start + "px";
+  console.log(start);
 }
 petrolWork();
 
@@ -169,3 +189,23 @@ for (let j = 0; j < 5; j++) {
 */
 
 // Score
+/*start*/
+let bar = document.getElementById("line");
+let load = document.getElementById("click-me");
+function startShow() {
+  load.style.visibility = "hidden";
+}
+
+load.addEventListener("click", () => {
+  const cDown = setInterval(carDown, 1);
+  function carDown() {
+    cY += 50;
+    if (cY > canvas.height - 80 - img.height) clearInterval(cDown);
+    setTimeout(startShow(), 2000);
+  }
+  animate();
+  petrol.style.visibility = "visible";
+  pLine.style.visibility = "visible";
+  d.style.visibility = "visible";
+  bar.style.visibility = "visible";
+});
