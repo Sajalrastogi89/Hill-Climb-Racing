@@ -22,6 +22,9 @@ function land(x) {
   return trigno(layers[Math.floor(x)], layers[Math.ceil(x)], x - Math.floor(x));
 }
 
+let coinsArr = [{dist: 500, num: 3}, {dist: 2000, num: 4}, {dist: 4000, num: 5}];
+
+
 /*CAR*/
 let img = new Image();
 
@@ -32,14 +35,19 @@ let cY = canvas.height - 200 - img.height;
 let carMove = () => {
   c.drawImage(car, cX, cY, 150, 150);
 };
-
+let i5=0;
 window.addEventListener("keydown", (event) => {
   if (event.key == "ArrowRight") {
    cX += 10;
-   ;
+cY+=Math.sin(cX)*10+land(i5++)+500;
+   
+    // coinsArr.splice(0, 1);
+   
+   
   }
   if (event.key == "ArrowLeft") {
     cX -= 10;
+    
   }
   if (event.key == "ArrowUp") {
     cX += 10;
@@ -61,13 +69,18 @@ function coins(distance,n){
     coinDistance+=50;
   }
   }
-
-let petrolDistance=400;
+  let petrolArr=[400,1900,3400];
+let count4=0;
 function petrol1(){
+
+  if(cX + 100>=petrolArr[0]){
+    petrolArr.splice(0,1);
+    console.log(++count4);
+  }
   let petrol2=new Image();
   petrol2.src="images/petrolTanker.png";
-  for(var k=0;k<4;k++){
-    c.drawImage(petrol2,petrolDistance+1200*k,canvas.height-img.height-40,70,50);
+  for(var k=0;k<3;k++){
+    c.drawImage(petrol2,petrolArr[k],canvas.height-img.height-40,70,50);
   }
 }
 
@@ -78,13 +91,32 @@ function petrol1(){
 
 
 
+
+let count2=0;
 let position = 0;
 function animate() {
+
+  for(let i=0; i<coinsArr.length; i++){
+    if(cX + 100>= coinsArr[i].dist){
+      console.log('coin collected');
+      coinsArr[i].dist = coinsArr[i].dist + 50;
+      coinsArr[i].num--;
+      // console.log(coinsArr[i].num);
+      if(coinsArr[i].num>=0){
+        count2=count2+1;
+        console.log(count2);
+        document.getElementById("score").innerHTML=count2;
+      }
+   }}
+
   c.fillRect(0, 0, canvas.width, canvas.height);
   carMove();
-  coins(500,3);
-  coins(2000,4);
-  coins(4000,5);
+  coinsArr.forEach(element => {
+    coins(element.dist, element.num);
+  });
+  // coins(500,3);
+  // coins(2000,4);
+  // coins(4000,5);
   petrol1();
   img.src = "images/trackNew.jpeg";
   position += 1;
@@ -123,6 +155,7 @@ petrolWork();
 
 /*COINS
 let coin = new Image();
+
 coin.src = "images/coin.png";
 c.drawImage(coin, 100, 100);
 /*
@@ -134,3 +167,5 @@ for (let j = 0; j < 5; j++) {
   coinDistance += 70;
 }
 */
+
+// Score

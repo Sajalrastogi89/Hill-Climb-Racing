@@ -59,3 +59,12 @@
   width: 15vw;
   height: 7vh;
 }
+table{
+  position: absolute;
+  top: 13vh;
+left: 5vw;
+
+ 
+  text-align: center;
+ font-size: 30px;
+}
