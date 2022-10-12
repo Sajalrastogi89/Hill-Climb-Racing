@@ -7,10 +7,38 @@
     <link rel="stylesheet" href="/css/style.css" />
     <title>Game</title>
   </head>
-  <body style="background-color: black">
+  <body style="background: url(/images/bg1.jpg)">
+    <!-- style="background-image:linear-gradient(to right, #06283d, #256d85, #47b5ff)"> -->
     <canvas id="canvas"></canvas>
+    <div id="fuel1">
+      <img id="fuel-image" src="/images/tank (2).png" alt="petrol" />
+    </div>
     <div id="petrol">
       <div id="petrol-line"></div>
+    </div>
+
+    <div id="coin">
+      <img id="coin-image" src="/images/coin.png" alt="Coin" />
+    </div>
+    <div id="score1">
+      <table>
+        <tr>
+          <th>coins</th>
+        </tr>
+        <tr>
+          <td id="score">0</td>
+        </tr>
+      </table>
+    </div>
+    <div id="section1">
+      <h2 id="climber">HILL CLIMBER</h2>
+      <div id="car-image">
+        <img src="/images/car2.jpg" />
+      </div>
+      <h2 id="countryside">COUNTRYSIDE</h2>
+      <div id="track-image">
+        <img src="/images/track.jpg" />
+      </div>
     </div>
     <div id="line"></div>
     <h1 id="distance">100</h1>

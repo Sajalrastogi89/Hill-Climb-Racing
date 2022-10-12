@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body style="background-color:rgb(49, 47, 47)">
+    <section id="out-section">
+    <div id="image">
+     <img src="/images/car2.jpg">
+    </div>
+    <h1 id="fuel">OUT OF FUEL</h1>
+    <h2 id="lastD">DISTANCE: 10M</h2>
+    <h2 id="coins">+10 COINS</h2>
+    <h1 id="continue">TOUCH TO CONTINUE</h2>
+    </section>
+    <script src="/javascript/script.js"></script>
+        <script>
+            let fuel = document.getElementById("fuel");
+            let distance = document.getElementById("lastD");
+            let coin= document.getElementById("coins");
+            let touch = document.getElementById("continue");
+            function fuelShow () {
+                fuel.style.visibility="visible";
+            }
+            function distanceShow () {
+                distance.style.visibility="visible";
+            }
+            function coinShow () {
+                coin.style.visibility = "visible";
+            }
+            function func(){
+            setInterval(
+                function touchShow () {
+                touch.style.visibility="visible";
+                touch.style.opacity="0.25";
+                setTimeout(()=>{
+                    touch.style.opacity="0.5";
+                },500);
+                setTimeout(()=>{
+                    touch.style.opacity="0.75";
+                },1000);
+                setTimeout(()=>{
+                    touch.style.opacity="1";
+                },1500);
+            },500);      
+        }
+        touch.addEventListener("click",()=>{
+            window.open("game.html");
+        })
+            setTimeout(fuelShow,1500);
+            setTimeout(distanceShow,2000);
+            setTimeout(coinShow,2500);
+            setTimeout(func,3000);
+        </script>
+</body>
+</html>

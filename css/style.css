@@ -40,8 +40,8 @@
 
 #click-me {
   position: absolute;
-  top: 40vh;
-  left: 45vw;
+  top: 74vh;
+  left: 43vw;
   width: 10vw;
   padding: 1%;
   font-size: 36px;
@@ -54,7 +54,6 @@
 #click-me:hover {
   transform: scale(1.2);
 }
-
 #petrol {
   position: fixed;
   top: 3vh;
@@ -90,4 +89,135 @@
   left: 35vw;
   color: white;
   visibility: hidden;
+}
+#coin {
+  position: absolute;
+  top: 15vh;
+  left: 2vw;
+}
+#fuel-image {
+  height: 7vh;
+  width: 5vw;
+  position: absolute;
+  top: 3vh;
+  left: 18vw;
+  visibility: hidden;
+}
+#coin-image {
+  height: 10px;
+  width: 20px;
+  position: absolute;
+  top: 8vh;
+  left: 18vw;
+  /* visibility: hidden; */
+}
+#fuel {
+  position: absolute;
+  top: 5vh;
+  left: 1vw;
+  visibility: hidden;
+}
+#score1 {
+  position: fixed;
+  top: 5vh;
+  left: 12vw;
+  overflow: hidden;
+  text-align: center;
+  font-size: 40px;
+  visibility: hidden;
+}
+
+#image {
+  display: block;
+  position: absolute;
+  top: 22vh;
+  left: 18vw;
+  background-color: white;
+  padding: 10px;
+  padding-bottom: 50px;
+  transform: rotate(-1deg);
+}
+#image img {
+  width: 22vw;
+  height: 42vh;
+}
+#fuel {
+  position: absolute;
+  top: 25vh;
+  left: 50vw;
+  font-size: 53px;
+  font-family: "Trebuchet MS", sans-serif;
+  visibility: hidden;
+  color: white;
+}
+#lastD {
+  position: absolute;
+  top: 40vh;
+  left: 50vw;
+  font-size: 35px;
+  font-family: "Trebuchet MS", sans-serif;
+  transform: rotate(-2deg);
+  visibility: hidden;
+  color: white;
+}
+#coins {
+  position: absolute;
+  top: 48vh;
+  left: 50vw;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 35px;
+  transform: rotate(-2deg);
+  visibility: hidden;
+  color: white;
+}
+#continue {
+  position: absolute;
+  top: 60vh;
+  left: 47vw;
+  font-size: 40px;
+  font-family: "Trebuchet MS", sans-serif;
+  visibility: hidden;
+  color: white;
+}
+#car-image {
+  position: absolute;
+  top: 24vh;
+  left: 20vw;
+  display: block;
+  background-color: black;
+  padding: 10px;
+  overflow: hidden;
+  color: white;
+}
+#car-image img {
+  height: 40vh;
+  width: 20vw;
+}
+#track-image {
+  display: block;
+  position: absolute;
+  top: 24vh;
+  left: 55vw;
+  background-color: black;
+  padding: 10px;
+  overflow: hidden;
+  color: white;
+}
+#track-image img {
+  height: 40vh;
+  width: 20vw;
+}
+#climber {
+  position: absolute;
+  top: 17vh;
+  left: 22.5vw;
+  font-size: 30px;
+  color: white;
+}
+#countryside {
+  position: absolute;
+  top: 17vh;
+  left: 58vw;
+  font-size: 30px;
+  color: white;
 }
